@@ -1,6 +1,6 @@
 from django.views.generic import ListView, DetailView
 
-from notes.models import Note
+from .models import Note
 
 class NoteList(ListView):
     model = Note
