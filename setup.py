@@ -109,7 +109,7 @@ DESCRIPTION = "A simple reusable app to add notes to various models"
 AUTHOR = "Colin Powell"
 AUTHOR_EMAIL = "colin@onecardinal.com"
 URL = "http://github.com/powellc/django-notes/"
-VERSION = __import__(PACKAGE).__version__
+VERSION = "1.0.0"
 
 
 setup(
