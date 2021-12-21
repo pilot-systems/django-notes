@@ -7,7 +7,7 @@ from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 from django_extensions.db.models import TitleSlugDescriptionModel, TimeStampedModel
 
-from notes.managers import PublicManager
+from .managers import PublicManager
 
 class Topic(TitleSlugDescriptionModel, TimeStampedModel):
     """
