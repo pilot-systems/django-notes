@@ -3,6 +3,7 @@ from django.db import models
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.auth.models import User
+from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 from django_extensions.db.models import TitleSlugDescriptionModel, TimeStampedModel
 
@@ -20,9 +21,8 @@ class Topic(TitleSlugDescriptionModel, TimeStampedModel):
     def __unicode__(self):
         return self.title
 
-    @models.permalink
     def get_absolute_url(self):
-        return ('notes-topic-detail', (), { 'slug': self.slug})
+        return reverse('notes-topic-detail', args=((), { 'slug': self.slug}))
 
 
 class Note(TimeStampedModel):
@@ -47,7 +47,6 @@ class Note(TimeStampedModel):
         verbose_name=_('Note')
         verbose_name_plural=_('Notes')
 
-    @models.permalink
     def get_absolute_url(self):
-        return ('notes-view', (), { 'pk': self.pk})
+        return reverse('notes-view', args=((), { 'pk': self.pk}))
 
