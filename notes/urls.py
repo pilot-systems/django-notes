@@ -2,9 +2,9 @@ from django.conf.urls.defaults import *
 from django.contrib.auth.decorators import login_required
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import CreateView, UpdateView
-from notes.models import Note, Topic
+from .models import Note, Topic
 
-from notes.views import NoteList, NoteDetail
+from .views import NoteList, NoteDetail
 
 urlpatterns = patterns('',
     url(r'^$', NoteList.as_view(), name='notes-index'),
