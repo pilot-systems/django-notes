@@ -1,7 +1,7 @@
 from django import template
 from django.core.cache import cache
 from django.contrib.contenttypes.models import ContentType
-from notes.models import Note
+from ..models import Note
 
 register = template.Library()
 
