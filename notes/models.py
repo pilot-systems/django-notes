@@ -31,14 +31,14 @@ class Note(TimeStampedModel):
 
     A simple model to handle adding arbitrary numbers of notes to an animal profile.
     """
-    topic=models.ForeignKey(Topic, on_delete=models.CASCADE,)
+    topic=models.ForeignKey(Topic, on_delete=models.CASCADE)
     date=models.DateField(_('Date'), default=date.today)
     content=models.TextField(_('Content'))
     public=models.BooleanField(_('Public'), default=True)
-    author=models.ForeignKey(User, blank=True, null=True)
-    content_type = models.ForeignKey(ContentType)
+    author=models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE)
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
     object_id = models.PositiveIntegerField()
-    content_object = GenericForeignKey("content_type", "object_id")
+    content_object = GenericForeignKey("content_type", "object_id", on_delete=models.CASCADE)
 
     public_objects = PublicManager()
     objects = models.Manager()
