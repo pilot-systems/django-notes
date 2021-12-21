@@ -1,4 +1,3 @@
-import codecs
 import os
 import sys
 
@@ -7,8 +6,6 @@ from fnmatch import fnmatchcase
 from setuptools import setup, find_packages
 
 
-def read(fname):
-    return codecs.open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 
 # Provided as an attribute, so you can append to these instead
@@ -116,7 +113,7 @@ setup(
     name=NAME,
     version=VERSION,
     description=DESCRIPTION,
-    long_description=read("README.rst"),
+    long_description="",
     author=AUTHOR,
     author_email=AUTHOR_EMAIL,
     license="BSD",
